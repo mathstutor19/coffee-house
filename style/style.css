@@ -401,3 +401,137 @@ li {
 #footer {
   scroll-behavior: smooth;
 }
+
+/* Responsive start  */
+@media (max-width: 768px) {
+  .nav__items,
+  .nav__menu {
+    display: none;
+  }
+  .small__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid #665f55;
+  }
+  .small__menu span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: #403f3d;
+    /* stroke-width: 1.5px; */
+  }
+  /* Enjoy start  */
+  .enjoy {
+    padding: 100px 60px;
+
+    margin-top: 20px;
+  }
+  .enjoy__left {
+    width: 100%;
+  }
+
+  /* About start  */
+  .about__images__wrapper {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 43px;
+  }
+
+  .about__image {
+    height: 590px;
+  }
+  .about__image__hidden {
+    display: none;
+  }
+
+  /* Mobile start  */
+  .mobile {
+    flex-direction: column;
+  }
+  .mobile__left {
+    max-width: 688px;
+    width: 100%;
+  }
+  /* Footer start  */
+  .footer {
+    flex-direction: column;
+    margin-top: -5px;
+    padding: 100px 60px;
+  }
+  .footer__left,
+  .footer__right {
+    width: 100%;
+  }
+  .footer__right__title {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0px 16px;
+    max-width: 100%;
+  }
+  .enjoy {
+    padding: 60px 16px;
+  }
+  .enjoy__title {
+    font-size: 42px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 115%; /* 48.3px */
+  }
+  .favorite__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .favorite__slide {
+    min-width: 200px;
+  }
+  .favorite__slide__center {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .favorite__icon__wrapper {
+    display: none;
+  }
+  .favorite__slide__image {
+    width: 100%;
+  }
+  .about__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .mobile__title {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .mobile__links__wrapper {
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: 200px;
+  }
+  .footer {
+    padding: 60px 16px;
+    gap: 60px;
+  }
+  .footer__left__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+}

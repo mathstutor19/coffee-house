@@ -193,6 +193,7 @@
         />
       </section>
     </main>
+
     <footer id="footer" class="container">
       <div class="footer">
         <div class="footer__left">
@@ -244,5 +245,42 @@
         </div>
       </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <img id="modalImage" src="" alt="Product" class="modal__image" />
+        <div class="modal__info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+
+          <div class="modal__sizes">
+            <h4>Size</h4>
+            <div class="modal__options" id="sizeOptions">
+              <button class="size-btn active" data-size="S">200 ml</button>
+              <button class="size-btn" data-size="M">300 ml</button>
+              <button class="size-btn" data-size="L">400 ml</button>
+            </div>
+          </div>
+
+          <div class="modal__additives">
+            <h4>Additives</h4>
+            <div class="modal__options" id="additiveOptions">
+              <button class="add-btn" data-add="Sugar">Sugar</button>
+              <button class="add-btn" data-add="Cinnamon">Cinnamon</button>
+              <button class="add-btn" data-add="Syrup">Syrup</button>
+            </div>
+          </div>
+
+          <div class="modal__total">
+            <span>Total:</span>
+            <strong id="modalPrice">$0.00</strong>
+          </div>
+
+          <button id="closeModal" class="modal__close">Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/menu.js"></script>
   </body>
 </html>

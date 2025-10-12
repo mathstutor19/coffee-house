@@ -33,7 +33,6 @@ li {
   margin: auto;
 }
 
-
 /* Enjoy section start  */
 .enjoy {
   display: flex;
@@ -44,16 +43,11 @@ li {
   align-items: flex-start;
   align-self: stretch;
   position: relative;
-  /* background-image: url("../images/enjoy.jpg"); */
-  /* background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-
   border-radius: 40px;
   margin-top: 20px;
+  overflow: hidden;
 }
 .enjoy__background-video {
-  /* Video fon */
   position: absolute;
   top: 0;
   left: 0;
@@ -102,11 +96,16 @@ li {
   padding: 20px 78px;
   border-radius: 100px;
   background: #e1d4c9;
+  transition: all 0.4s ease-in-out;
 }
 .enjoy__button img {
   display: none;
   margin-left: 8px;
 }
+.enjoy__button:hover .enjoy__button__text {
+  transform: translateX(-5px);
+}
+
 .enjoy__button:hover img {
   display: block;
 }
@@ -157,7 +156,7 @@ li {
   font-style: normal;
   font-weight: 600;
   line-height: 125%; /* 30px */
-  margin: 20px 0px 10px;
+  margin: 16px 0px 16px;
 }
 .farovite__slide__text {
   color: #403f3d;
@@ -195,15 +194,20 @@ li {
 .favorite__icon__wrapper:hover {
   background: #665f55;
 }
-
+.favorite__icon__wrapper:hover img {
+  filter: brightness(0) invert(1);
+}
 .favorite__icon__right {
   right: 0;
 }
 .favorite__slide__points {
   display: flex;
+  width: 160px;
+  margin: auto;
   column-gap: 12px;
   justify-content: center;
   margin-top: 40px;
+  overflow: hidden;
 }
 .favorite__slide__point {
   width: 40px;
@@ -282,157 +286,70 @@ li {
 .mobile__title span {
   color: var(--text-accent, #b0907a);
 }
+
 .mobile__links__wrapper {
   display: flex;
-  column-gap: 20px;
+  align-items: center;
+  gap: 20px;
 }
+.mobile__link__wrapper {
+  display: flex;
+  width: 200px;
+  padding: 12px 20px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid #665f55;
+  transition: all 0.4s ease-in-out;
+}
+.mobile__links__content span {
+  color: #403f3d;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 14px */
+}
+.mobile__links__content p {
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+}
+.mobile__link__wrapper:hover {
+  background: #665f55;
+}
+.mobile__link__wrapper:hover .mobile__link__img {
+  filter: brightness(0) invert(0.9);
+}
+
+.mobile__link__wrapper:hover .mobile__links__content span {
+  color: #e1d4c9;
+}
+
+.mobile__link__wrapper:hover .mobile__links__content p {
+  color: #e1d4c9;
+}
+
 .mobile__right {
   max-width: 630px;
 }
 .mobile__right img {
   width: 100%;
 }
-/* Footer section start */
-.footer {
-  display: flex;
-  padding: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  border-radius: 40px;
-  background: #665f55;
-  margin-bottom: 40px;
-}
-
-.footer__left,
-.footer__right {
-  width: 530px;
-}
-.footer__left__title {
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%; /* 75px */
-}
-.footer__left__title span {
-  color: #b0907a;
-}
-.footer__socials {
-  display: flex;
-  column-gap: 12px;
-  margin-top: 40px;
-}
-.footer__social {
-  display: flex;
-  width: 60px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  border: 1px solid #c1b6ad;
-  transition: all 0.4s ease-in-out;
-}
-.footer__social:hover {
-  background: var(--background-body, #e1d4c9);
-}
-
-.footer__right__title {
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%; /* 30px */
-  margin-top: -8px;
-}
-.footer__address {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  margin-top: 40px;
-}
-.footer__address__link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%; /* 24px */
-  position: relative;
-  /* width: 260px; */
-  transition: all 0.4s ease-in-out;
-}
-.footer__address__link:hover:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #e1d4c9;
-  top: 25px;
-}
-#footer {
-  scroll-behavior: smooth;
-}
 
 /* Responsive start  */
+@media (max-width: 992px) {
+  /* Footer start  */
+}
+
 @media (max-width: 768px) {
-  .nav__items,
-  .nav__menu {
-    display: none;
-  }
-  .small__menu {
-    width: 44px;
-    height: 44px;
-    border: 1px solid #3b3b3b;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .small__menu span {
-    position: absolute;
-    width: 18px;
-    height: 2px;
-    background-color: #3b3b3b;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    margin-top: -5px;
-  }
-
-  /* Ikkinchi chiziq */
-  .small__menu span:nth-child(2) {
-    transform: translateY(6px);
-  }
-
-  /* --- Bosilgandan keyingi holat --- */
-  .small__menu.active span:nth-child(1) {
-    transform: rotate(45deg);
-    margin-top: 0px;
-  }
-
-  .small__menu.active span:nth-child(2) {
-    transform: rotate(-45deg);
-    margin-top: 0px;
-  }
-
-  .mobile__menu {
-    display: flex;
-  }
-  .mobile__menu.active {
-    right: 0;
-  }
   /* Enjoy start  */
   .enjoy {
     padding: 100px 60px;
-
     margin-top: 20px;
   }
   .enjoy__left {
@@ -443,9 +360,39 @@ li {
   .about__images__wrapper {
     flex-direction: column;
     gap: 40px;
-    margin-top: 43px;
+    margin-top: 40px;
   }
-
+  .about__left,
+  .about__right {
+    overflow: hidden;
+  }
+  .about__left {
+    width: 100%;
+    height: 590px;
+    background-image: url("../images/about-1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+  .about__right {
+    width: 100%;
+    height: 590px;
+    background-image: url("../images/about-4.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+  .about__image {
+    display: none;
+    border-radius: 20px;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 590px;
+  }
   .about__image {
     height: 590px;
   }
@@ -461,18 +408,71 @@ li {
     max-width: 688px;
     width: 100%;
   }
-  /* Footer start  */
-  .footer {
+}
+
+@media (max-width: 576px) {
+  .enjoy {
+    padding: 60px 16px;
+  }
+  .enjoy__title {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 115%; /* 48.3px */
+  }
+  .enjoy__desc {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+  .favorite__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .favorite__icon__wrapper {
+    display: none;
+  }
+  .favorite__slide__image {
+    max-width: 348px;
+    height: 348px;
+  }
+
+  .favorite__slide {
+    display: flex;
+    min-width: 280px;
+    max-width: 1162px;
     flex-direction: column;
-    margin-top: -5px;
-    padding: 100px 60px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
-  .footer__left,
-  .footer__right {
+  .favorite__slide__center {
+    max-width: 480px;
     width: 100%;
+    margin: auto;
+    text-align: center;
   }
-  .footer__right__title {
-    margin-top: 0px;
+  .favorite__slide__image {
+    max-width: 480px;
+    width: 100%;
+    height: 480px;
+  }
+  .about__title {
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .mobile__title {
+    font-family: Inter;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
   }
 }
 
@@ -481,21 +481,7 @@ li {
     padding: 0px 16px;
     max-width: 100%;
   }
-  .enjoy {
-    padding: 60px 16px;
-  }
-  .enjoy__title {
-    font-size: 42px;
-    font-style: italic;
-    font-weight: 600;
-    line-height: 115%; /* 48.3px */
-  }
-  .favorite__title {
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%; /* 40px */
-  }
+
   .favorite__slide {
     min-width: 200px;
   }
@@ -504,17 +490,19 @@ li {
     margin: auto;
     text-align: center;
   }
-  .favorite__icon__wrapper {
-    display: none;
-  }
   .favorite__slide__image {
-    width: 100%;
+    width: 348px;
+    height: 348px;
   }
+
   .about__title {
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%; /* 40px */
+  }
+  .mobile {
+    gap: 40px;
   }
   .mobile__title {
     font-size: 32px;
@@ -527,14 +515,60 @@ li {
     row-gap: 20px;
     max-width: 200px;
   }
-  .footer {
-    padding: 60px 16px;
-    gap: 60px;
+  .mobile__link__wrapper {
+    display: flex;
+    width: 200px;
+    padding: 8px 18px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    border: 1px solid #665f55;
+    transition: all 0.4s ease-in-out;
   }
-  .footer__left__title {
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%; /* 40px */
+}
+
+/* Hover effects – faqat desktop uchun */
+@media (hover: hover) and (pointer: fine) {
+  /* Enjoy button hover */
+  .enjoy__button:hover .enjoy__button__text {
+    transform: translateX(-5px);
+  }
+  .enjoy__button:hover img {
+    display: block;
+  }
+
+  /* Favorite section arrow hover */
+  .favorite__icon__wrapper:hover {
+    background: #665f55;
+  }
+  .favorite__icon__wrapper:hover img {
+    filter: brightness(0) invert(1);
+  }
+
+  /* About section image hover */
+  .about__image:hover {
+    transform: scale(0.9);
+  }
+
+  /* Mobile section link hover */
+  .mobile__link__wrapper:hover {
+    background: #665f55;
+  }
+  .mobile__link__wrapper:hover .mobile__link__img {
+    filter: brightness(0) invert(0.9);
+  }
+  .mobile__link__wrapper:hover .mobile__links__content span,
+  .mobile__link__wrapper:hover .mobile__links__content p {
+    color: #e1d4c9;
+  }
+}
+
+/* Hover effects – mobil qurilmalarda (o‘chirilgan) */
+@media (hover: none) and (pointer: coarse) {
+  .enjoy__button:hover,
+  .favorite__icon__wrapper:hover,
+  .about__image:hover,
+  .mobile__link__wrapper:hover {
+    all: unset;
   }
 }

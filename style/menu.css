@@ -221,92 +221,6 @@ li {
   display: none;
 }
 
-/* Footer section start */
-.footer {
-  display: flex;
-  padding: 100px;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  border-radius: 40px;
-  background: #665f55;
-  margin-bottom: 40px;
-}
-
-.footer__left,
-.footer__right {
-  width: 530px;
-}
-.footer__left__title {
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%; /* 75px */
-}
-.footer__left__title span {
-  color: #b0907a;
-}
-.footer__socials {
-  display: flex;
-  column-gap: 12px;
-  margin-top: 40px;
-}
-.footer__social {
-  display: flex;
-  width: 60px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  border: 1px solid #c1b6ad;
-  transition: all 0.4s ease-in-out;
-}
-.footer__social:hover {
-  background: var(--background-body, #e1d4c9);
-}
-
-.footer__right__title {
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%; /* 30px */
-  margin-top: -8px;
-}
-.footer__address {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  margin-top: 40px;
-}
-.footer__address__link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #e1d4c9;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%; /* 24px */
-  position: relative;
-  /* width: 260px; */
-  transition: all 0.4s ease-in-out;
-}
-.footer__address__link:hover:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #e1d4c9;
-  top: 25px;
-}
-#footer {
-  scroll-behavior: smooth;
-}
 /* Modal start  */
 .modal {
   position: fixed;
@@ -384,19 +298,6 @@ li {
 
 /* Responsive start  */
 @media (max-width: 768px) {
-  /* Footer start  */
-  .footer {
-    flex-direction: column;
-    margin-top: -5px;
-    padding: 100px 60px;
-  }
-  .footer__left,
-  .footer__right {
-    width: 100%;
-  }
-  .footer__right__title {
-    margin-top: 0px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -417,14 +318,35 @@ li {
   .offer___card__wrapper {
     justify-content: center;
   }
-  .footer {
-    padding: 60px 16px;
-    gap: 60px;
+}
+
+/* --- HOVER EFFECTS: Faqat desktopda ishlaydi --- */
+@media (hover: hover) and (pointer: fine) {
+  .offer__menu:hover {
+    background: #665f55;
   }
-  .footer__left__title {
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%; /* 40px */
+
+  .offer__menu:hover .offer__menu__image {
+    background: #e1d4c9;
+  }
+
+  .offer__menu:hover .offer__menu__text {
+    color: #e1d4c9;
+  }
+
+  .offer__card__image:hover {
+    transform: scale(0.9);
+  }
+}
+
+/* --- Mobil qurilmalarda hover o‘chiriladi --- */
+@media (hover: none) and (pointer: coarse) {
+  .offer__menu:hover,
+  .offer__menu:hover .offer__menu__image,
+  .offer__menu:hover .offer__menu__text,
+  .offer__card__image:hover,
+  .footer__social:hover,
+  .footer__address__link:hover:before {
+    all: unset;
   }
 }

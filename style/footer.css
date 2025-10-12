@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #e1d4c9;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.container {
+  padding: 0px 40px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* Footer section start */
+.footer {
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  border-radius: 40px;
+  background: #665f55;
+  margin-bottom: 40px;
+}
+
+.footer__left,
+.footer__right {
+  width: 530px;
+}
+.footer__left__title {
+  color: #e1d4c9;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 75px */
+}
+.footer__left__title span {
+  color: #b0907a;
+}
+.footer__socials {
+  display: flex;
+  column-gap: 12px;
+  margin-top: 40px;
+}
+.footer__social {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #c1b6ad;
+  transition: all 0.4s ease-in-out;
+}
+.footer__social:hover {
+  background: #e1d4c9;
+}
+.footer__social__img {
+  transition: all 0.4s ease-in-out;
+}
+.footer__social:hover .footer__social__img {
+  filter: brightness(0) invert(0);
+}
+
+.footer__right__title {
+  color: #e1d4c9;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 30px */
+  margin-top: -8px;
+}
+.footer__address {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-top: 40px;
+}
+.footer__address__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e1d4c9;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  position: relative;
+  max-width: 270px;
+  transition: all 0.4s ease-in-out;
+}
+.footer__address__link:hover:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+
+  height: 2px;
+  background: #e1d4c9;
+  top: 25px;
+}
+#footer {
+  scroll-behavior: smooth;
+}
+
+/* Responsive start  */
+@media (max-width: 992px) {
+  /* Footer start  */
+  .footer {
+    flex-direction: column;
+    margin-top: -5px;
+    padding: 100px 60px;
+  }
+  .footer__left,
+  .footer__right {
+    width: 100%;
+    max-width: 530px;
+  }
+  .footer__right__title {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__left,
+  .footer__right {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer__left__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0px 16px;
+    max-width: 100%;
+  }
+
+  .footer {
+    padding: 63px 14px;
+    gap: 40px;
+  }
+  .footer__left__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+}
+/* Hover effektlar faqat desktop uchun ishlaydi */
+@media (hover: hover) and (pointer: fine) {
+  .footer__social:hover {
+    background: #e1d4c9;
+  }
+
+  .footer__social:hover .footer__social__img {
+    /* Rasmni qora rangda ko‘rsatish */
+    filter: brightness(0) invert(0);
+  }
+
+  .footer__address__link:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #e1d4c9;
+    top: 25px;
+  }
+}
+
+/* Hover effektlar mobil qurilmalarda o‘chiriladi */
+@media (hover: none) and (pointer: coarse) {
+  .footer__social,
+  .footer__address__link {
+    transition: none;
+  }
+
+  .footer__social:hover,
+  .footer__social:hover .footer__social__img,
+  .footer__address__link:hover:before {
+    all: unset;
+  }
+}

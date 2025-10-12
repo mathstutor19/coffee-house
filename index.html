@@ -6,7 +6,8 @@
     <link rel="icon" href="./images/icons/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/header.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/footer.css" />
+    <title>Coffee</title>
   </head>
   <body>
     <header class="container header">
@@ -81,7 +82,8 @@
             beverage.
           </p>
           <a href="menu.html" class="enjoy__button">
-            Menu <img src="./images/icons/coffee-cup.svg" alt="coffe" />
+            <span class="enjoy__button__text">Menu</span>
+            <img src="./images/icons/coffee-cup.svg" alt="coffe" />
           </a>
         </div>
       </section>
@@ -165,11 +167,28 @@
             ordering your favorite coffee from wherever you are
           </div>
           <div class="mobile__links__wrapper">
-            <img
-              src="./images/icons/button-app-store.svg"
-              alt="button-app-store"
-            />
-            <img src="./images/icons/button-google-play.svg" alt="" />
+            <div class="mobile__link__wrapper">
+              <img
+                class="mobile__link__img"
+                src="./images/icons/button-app-store.svg"
+                alt="button-app-store"
+              />
+              <div class="mobile__links__content">
+                <span>Available on the</span>
+                <p>App Store</p>
+              </div>
+            </div>
+            <div class="mobile__link__wrapper">
+              <img
+                class="mobile__link__img"
+                src="./images/icons/button-google-play.svg"
+                alt="button-google-play"
+              />
+              <div class="mobile__links__content">
+                <span>Available on the</span>
+                <p>Google Play</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="mobile__right">
@@ -186,18 +205,26 @@
           <ul class="footer__socials">
             <li class="footer__social">
               <a href="">
-                <img src="./images/icons/twitter.svg" alt="twitter" />
-              </a>
-            </li>
-            <li class="footer__social">
-              <a href="">
-                <img src="./images/icons/instagram.svg" alt="instagram" />
+                <img
+                  class="footer__social__img"
+                  src="./images/icons/twitter.svg"
+                  alt="twitter"
+                />
               </a>
             </li>
             <li class="footer__social">
               <a href="">
                 <img
-                  class="icon"
+                  class="footer__social__img"
+                  src="./images/icons/instagram.svg"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+            <li class="footer__social">
+              <a href="">
+                <img
+                  class="footer__social__img"
                   src="./images/icons/facebook.svg"
                   alt="facebook"
                 />

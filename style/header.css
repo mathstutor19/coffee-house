@@ -39,25 +39,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  /* position: relative; */
   width: 72px;
   transition: color 0.3s ease;
 }
-
-.nav__menu__link:hover::before {
+.nav__menu {
+  position: relative;
+}
+.nav__menu:hover::before {
   content: "";
-  width: 72px;
-  height: 2px;
   position: absolute;
+  width: 70px;
+  height: 2px;
   background: #403f3d;
   top: 25px;
 }
 
-.nav__menu__link-active {
+.nav__menu-active::before {
   content: "";
-  width: 72px;
-  height: 2px;
   position: absolute;
+  width: 70px;
+  height: 2px;
   background: #403f3d;
   top: 25px;
 }
@@ -178,5 +180,40 @@
   }
   .mobile__menu.active {
     right: 0;
+  }
+}
+
+/* --- HOVER EFFEKTLAR FAQAT DESKTOPDA --- */
+@media (hover: hover) and (pointer: fine) {
+  .nav__link:hover {
+    text-decoration: underline;
+    text-decoration-color: #403f3d;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+  }
+
+  .nav__menu:hover::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background: #403f3d;
+    top: 25px;
+  }
+
+  .nav__mobile__link:hover {
+    text-decoration: underline;
+    text-decoration-color: #403f3d;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* --- Mobil qurilmalarda hover o‘chiriladi --- */
+@media (hover: none) and (pointer: coarse) {
+  .nav__link:hover,
+  .nav__menu:hover::before,
+  .nav__mobile__link:hover {
+    all: unset;
   }
 }

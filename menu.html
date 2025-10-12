@@ -7,6 +7,7 @@
     <link rel="icon" href="./images/icons/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style/menu.css" />
     <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/footer.css">
     <title>Coffee</title>
   </head>
   <body>
@@ -29,8 +30,8 @@
             <a href="#footer" class="nav__link">Contact us</a>
           </li>
         </ul>
-        <div class="nav__menu">
-          <a href="menu.html" class="nav__menu__link nav__menu__link-active">
+        <div class="nav__menu nav__menu-active">
+          <a href="menu.html" class="nav__menu__link">
             <span>Menu</span>
             <img src="./images/icons/coffee-cup.svg" alt="coffee-cup" />
           </a>
@@ -218,8 +219,7 @@
         />
       </section>
     </main>
-
-    <footer id="footer" class="container">
+<footer id="footer" class="container">
       <div class="footer">
         <div class="footer__left">
           <h2 class="footer__left__title">
@@ -228,18 +228,26 @@
           <ul class="footer__socials">
             <li class="footer__social">
               <a href="">
-                <img src="./images/icons/twitter.svg" alt="twitter" />
-              </a>
-            </li>
-            <li class="footer__social">
-              <a href="">
-                <img src="./images/icons/instagram.svg" alt="instagram" />
+                <img
+                  class="footer__social__img"
+                  src="./images/icons/twitter.svg"
+                  alt="twitter"
+                />
               </a>
             </li>
             <li class="footer__social">
               <a href="">
                 <img
-                  class="icon"
+                  class="footer__social__img"
+                  src="./images/icons/instagram.svg"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+            <li class="footer__social">
+              <a href="">
+                <img
+                  class="footer__social__img"
                   src="./images/icons/facebook.svg"
                   alt="facebook"
                 />

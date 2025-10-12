@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/icons/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style/menu.css" />
+    <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
+    <title>Coffee</title>
+  </head>
+  <body>
+    <header class="container header">
+      <nav class="nav">
+        <a href="./index.html">
+          <img class="nav__logo" src="./images/icons/logo.svg" alt="logo" />
+        </a>
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a class="nav__link" href="./index.html"> Favorite coffee </a>
+          </li>
+          <li class="nav__item">
+            <a href="./index.html" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="./index.html" class="nav__link">Mobile app</a>
+          </li>
+          <li class="nav__item">
+            <a href="#footer" class="nav__link">Contact us</a>
+          </li>
+        </ul>
+        <div class="nav__menu nav__menu-active">
+          <a href="menu.html" class="nav__menu__link">
+            <span>Menu</span>
+            <img src="./images/icons/coffee-cup.svg" alt="coffee-cup" />
+          </a>
+        </div>
+        <div class="small__menu" id="menu-btn">
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <nav class="mobile__menu" id="mobile__menu">
+        <ul class="nav__mobile__items">
+          <li class="nav__item">
+            <a class="nav__mobile__link" href="./index.html">
+              Favorite coffee
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="./index.html" class="nav__mobile__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="./index.html" class="nav__mobile__link">Mobile app</a>
+          </li>
+          <li class="nav__item">
+            <a href="#footer" class="nav__mobile__link">Contact us</a>
+          </li>
+        </ul>
+        <div class="nav__mobile__menu">
+          <a href="menu.html" class="nav__mobile__link">
+            <span>Menu</span>
+            <img src="./images/icons/coffee-cup.svg" alt="coffee-cup" />
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <!-- <section class="offer">
+        <h1 class="offer__title">
+          Behind each of our cups hides an <span>amazing surprise</span>
+        </h1>
+        <ul class="offer__menus">
+          <li class="offer__menu offer__menu-active">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image offer__menu__image-active">
+                <img src="./images/icons/coffee.svg" alt="coffee" />
+              </div>
+              <span class="offer__menu__text-active">Coffee</span>
+            </div>
+          </li>
+          <li class="offer__menu">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image">
+                <img src="./images/icons/tea.svg" alt="tea" />
+              </div>
+              <span class="offer__menu__text">Tea</span>
+            </div>
+          </li>
+          <li class="offer__menu">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image">
+                <img src="./images/icons/dessert.svg" alt="dessert" />
+              </div>
+              <span class="offer__menu__text">Dessert</span>
+            </div>
+          </li>
+        </ul>
+        <div class="offer___card__wrapper">
+          <article class="offer__card">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-1.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Irish coffee</h3>
+              <p class="offer__card__text">
+                Fragrant black coffee with Jameson Irish whiskey and whipped
+                milk
+              </p>
+              <strong class="offer__card__price">$7.00</strong>
+            </div>
+          </article>
+          <article class="offer__card">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-2.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Kahlua coffee</h3>
+              <p class="offer__card__text">
+                Classic coffee with milk and Kahlua liqueur under a cap of
+                frothed milk
+              </p>
+              <strong class="offer__card__price">$7.00</strong>
+            </div>
+          </article>
+          <article class="offer__card">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-3.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Honey raf</h3>
+              <p class="offer__card__text">
+                Espresso with frothed milk, cream and aromatic honey
+              </p>
+              <strong class="offer__card__price">$5.50</strong>
+            </div>
+          </article>
+          <article class="offer__card">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-4.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Ice cappuccino</h3>
+              <p class="offer__card__text">
+                Cappuccino with soft thick foam in summer version with ice
+              </p>
+              <strong class="offer__card__price">$5.00</strong>
+            </div>
+          </article>
+          <article class="offer__card offer__card-hidden">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-5.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Espresso</h3>
+              <p class="offer__card__text">Classic black coffee</p>
+              <strong class="offer__card__price">$4.50</strong>
+            </div>
+          </article>
+          <article class="offer__card offer__card-hidden">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-6.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Latte</h3>
+              <p class="offer__card__text">
+                Espresso coffee with the addition of steamed milk and dense milk
+                foam
+              </p>
+              <strong class="offer__card__price">$5.50</strong>
+            </div>
+          </article>
+          <article class="offer__card offer__card-hidden">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-7.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Latte macchiato</h3>
+              <p class="offer__card__text">
+                Espresso with frothed milk and chocolate
+              </p>
+              <strong class="offer__card__price">$5.50</strong>
+            </div>
+          </article>
+          <article class="offer__card offer__card-hidden">
+            <img
+              class="offer__card__image"
+              src="./images/coffee-8.png"
+              alt="coffee-1"
+            />
+            <div class="offer__card__about">
+              <h3 class="offer__card__title">Coffee with cognac</h3>
+              <p class="offer__card__text">
+                Fragrant black coffee with cognac and whipped cream
+              </p>
+              <strong class="offer__card__price">$6.50</strong>
+            </div>
+          </article>
+        </div>
+        <img
+          class="menu__loader"
+          src="./images/icons/menu-loader.svg"
+          alt="menu-loader"
+        />
+      </section> -->
+      <section class="offer">
+        <h1 class="offer__title">
+          Behind each of our cups hides an <span>amazing surprise</span>
+        </h1>
+
+        <ul class="offer__menus">
+          <li class="offer__menu offer__menu-active" data-category="coffee">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image offer__menu__image-active">
+                <img src="./images/icons/coffee.svg" alt="coffee" />
+              </div>
+              <span class="offer__menu__text-active">Coffee</span>
+            </div>
+          </li>
+          <li class="offer__menu" data-category="tea">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image">
+                <img src="./images/icons/tea.svg" alt="tea" />
+              </div>
+              <span class="offer__menu__text">Tea</span>
+            </div>
+          </li>
+          <li class="offer__menu" data-category="dessert">
+            <div class="offer__menu__button">
+              <div class="offer__menu__image">
+                <img src="./images/icons/dessert.svg" alt="dessert" />
+              </div>
+              <span class="offer__menu__text">Dessert</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="offer___card__wrapper"></div>
+
+        <div class="load-more" style="display: none">
+          <img
+            class="load-more__img"
+            src="./images/icons/refresh.svg"
+            alt="refresh"
+          />
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="container">
+      <div class="footer menu__footer">
+        <div class="footer__left">
+          <h2 class="footer__left__title">
+            Sip, Savor, Smile. <span>It’s coffee time!</span>
+          </h2>
+          <ul class="footer__socials">
+            <li class="footer__social">
+              <a href="">
+                <img
+                  class="footer__social__img"
+                  src="./images/icons/twitter.svg"
+                  alt="twitter"
+                />
+              </a>
+            </li>
+            <li class="footer__social">
+              <a href="">
+                <img
+                  class="footer__social__img"
+                  src="./images/icons/instagram.svg"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+            <li class="footer__social">
+              <a href="">
+                <img
+                  class="footer__social__img"
+                  src="./images/icons/facebook.svg"
+                  alt="facebook"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__right">
+          <h3 class="footer__right__title">Contact us</h3>
+          <address class="footer__address">
+            <a
+              class="footer__address__link"
+              target="_blank"
+              href="https://maps.app.goo.gl/fyYDikBEUEYPMyWs5"
+            >
+              <img src="./images//icons/pin-alt.svg" alt="pin-alt" />
+              <span>8558 Green Rd., LA</span>
+            </a>
+            <a class="footer__address__link" href="tel:+1(603)555-0123">
+              <img src="./images//icons/phone.svg" alt="phone" />
+              <span>+1 (603) 555-0123</span>
+            </a>
+            <a class="footer__address__link" href="">
+              <img src="./images//icons/clock.svg" alt="clock" />
+              <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+            </a>
+          </address>
+        </div>
+      </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <img id="modalImage" src="" alt="Product" class="modal__image" />
+        <div class="modal__info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+
+          <div class="modal__sizes">
+            <h4>Size</h4>
+            <div class="modal__options" id="sizeOptions">
+              <button class="size-btn active" data-size="S">200 ml</button>
+              <button class="size-btn" data-size="M">300 ml</button>
+              <button class="size-btn" data-size="L">400 ml</button>
+            </div>
+          </div>
+
+          <div class="modal__additives">
+            <h4>Additives</h4>
+            <div class="modal__options" id="additiveOptions">
+              <button class="add-btn" data-add="Sugar">Sugar</button>
+              <button class="add-btn" data-add="Cinnamon">Cinnamon</button>
+              <button class="add-btn" data-add="Syrup">Syrup</button>
+            </div>
+          </div>
+
+          <div class="modal__total">
+            <span>Total:</span>
+            <strong id="modalPrice">$0.00</strong>
+          </div>
+
+          <button id="closeModal" class="modal__close">Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/menu.js"></script>
+    <script src="./js/hamburger-menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #e1d4c9;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  padding-top: 17px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Header start  */
+.container {
+  padding: 0px 40px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.offer__menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 361px;
+  height: 46px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.offer__menu {
+  display: flex;
+  padding: 8px 16px 8px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid #c1b6ad;
+  transition: all 0.4s ease-in-out;
+}
+
+.offer__menu:hover {
+  background: #665f55;
+}
+
+.offer__menu:hover .offer__menu__image {
+  background: #e1d4c9;
+}
+
+.offer__menu:hover .offer__menu__text {
+  color: #e1d4c9;
+}
+
+.offer__menu-active {
+  background: #665f55;
+}
+
+.offer__menu__button {
+  border: none;
+  display: flex;
+  align-items: center;
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  /* 24px */
+  transition: all 0.4s ease-in-out;
+}
+
+.offer__menu__image {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  padding: 3px 7px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #c1b6ad;
+  margin-right: 8px;
+  transition: all 0.4s ease-in-out;
+}
+
+.offer__menu__image-active {
+  background: #e1d4c9;
+}
+
+.offer__menu__text {
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  /* 24px */
+  transition: all 0.4s ease-in-out;
+}
+
+.offer__menu__text-active {
+  color: #e1d4c9;
+  font-family: "Inter";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  /* 24px */
+}
+
+/* Offer start */
+.offer__title {
+  max-width: 800px;
+  color: #403f3d;
+  text-align: center;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* 75px */
+  margin: 20px auto 40px;
+}
+
+.offer__title span {
+  color: #b0907a;
+}
+
+.offer___card__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.offer__card {
+  width: 310px;
+  border-radius: 40px;
+  border: 1px solid #c1b6ad;
+}
+
+.offer__card__image {
+  width: 100%;
+  height: 308px;
+  border-radius: 40px;
+  transition: all 0.4s ease-in-out;
+}
+
+.offer__card__image:hover {
+  transform: scale(0.9);
+}
+
+.offer__card__about {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.offer__card__title {
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  /* 30px */
+  color: var(--Text-Dark, #403f3d);
+  font-feature-settings: "liga" off, "clig" off;
+  /* Desktop/Heading/heading-3 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 30px */
+}
+
+.offer__card__text {
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  min-height: 70px;
+  /* 24px */
+}
+
+.offer__card__price {
+  color: #403f3d;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-top: auto; /* har doim eng pastda joylashadi */
+  /* 30px */
+}
+
+.menu__loader {
+  display: none;
+}
+
+.load-more {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 100px;
+  border: 1px solid #665f55;
+  margin: 40px auto 0px;
+  transition: all 0.4s ease-in-out;
+}
+.load-more:hover {
+  background: #665f55;
+}
+.load-more:hover .load-more__img {
+  filter: brightness(0) invert(1);
+}
+.load-more__img {
+  padding: 17px;
+}
+
+/* Modal start  */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__content {
+  display: flex;
+  gap: 20px;
+  background: #efe0d4;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 600px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal__image {
+  width: 200px;
+  border-radius: 12px;
+}
+
+.modal__info h2 {
+  margin: 0 0 8px;
+}
+
+.modal__options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 12px;
+}
+
+.size-btn,
+.add-btn {
+  border: 1px solid #c7b299;
+  background: #f5ebe2;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.size-btn.active,
+.add-btn.active {
+  background: #40352f;
+  color: #fff;
+  border-color: #40352f;
+}
+
+.modal__close {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #c7b299;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.modal__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Responsive start  */
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0px 16px;
+    max-width: 100%;
+  }
+  .offer__title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 40px */
+  }
+  .offer__menus {
+    gap: 8px;
+    max-width: 361px;
+  }
+  .offer___card__wrapper {
+    justify-content: center;
+  }
+}
+
+/* --- HOVER EFFECTS: Faqat desktopda ishlaydi --- */
+@media (hover: hover) and (pointer: fine) {
+  .offer__menu:hover {
+    background: #665f55;
+  }
+
+  .offer__menu:hover .offer__menu__image {
+    background: #e1d4c9;
+  }
+
+  .offer__menu:hover .offer__menu__text {
+    color: #e1d4c9;
+  }
+
+  .offer__card__image:hover {
+    transform: scale(0.9);
+  }
+}
+
+/* --- Mobil qurilmalarda hover o‘chiriladi --- */
+@media (hover: none) and (pointer: coarse) {
+  .offer__menu:hover,
+  .offer__menu:hover .offer__menu__image,
+  .offer__menu:hover .offer__menu__text,
+  .offer__card__image:hover,
+  .footer__social:hover,
+  .footer__address__link:hover:before {
+    all: unset;
+  }
+}

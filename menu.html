@@ -261,6 +261,81 @@
         </div>
       </section>
     </main>
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <img id="modalImg" src="" alt="" class="modal-img" />
+        <div>
+          <h2 id="modalTitle" class="modalTitle"></h2>
+          <p id="modalDesc" class="modalDesc"></p>
+
+          <div class="modal-section">
+            <h3 class="model-size-title">Size:</h3>
+            <div class="model-size-wrapper">
+              <label class="model-size-label"
+                ><input
+                  type="radio"
+                  name="size"
+                  value="S"
+                  data-price="0"
+                  checked
+                />
+                <span>S</span> 200 ml</label
+              >
+              <label class="model-size-label"
+                ><input
+                  type="radio"
+                  name="size"
+                  value="M"
+                  data-price="0.5"
+                /><span>M</span> 300 ml</label
+              >
+              <label class="model-size-label"
+                ><input type="radio" name="size" value="L" data-price="1" />
+                <span>L</span> 400 ml</label
+              >
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3 class="model-size-title">Additives</h3>
+            <div class="model-size-wrapper">
+              <label class="model-size-label"
+                ><input
+                  type="radio"
+                  name="size"
+                  value="S"
+                  data-price="0"
+                  checked
+                />
+                <span>1</span> Sugar</label
+              >
+              <label class="model-size-label"
+                ><input
+                  type="radio"
+                  name="size"
+                  value="M"
+                  data-price="0.5"
+                /><span>2</span> Cinnamon</label
+              >
+              <label class="model-size-label"
+                ><input type="radio" name="size" value="L" data-price="1" />
+                <span>3</span> Syrup</label
+              >
+            </div>
+          </div>
+
+          <p class="modal-total">Total Price: $<span id="finalPrice"></span></p>
+          <p class="modal-note">
+            The cost is not final. Download our mobile app to see the final
+            price and place your order. Earn loyalty points and enjoy your
+            favorite coffee with up to 20% discount.
+          </p>
+          <button id="closeModal" class="close">Close</button>
+        </div>
+      </div>
+    </div>
+
     <footer id="footer" class="container">
       <div class="footer menu__footer">
         <div class="footer__left">
@@ -320,42 +395,7 @@
         </div>
       </div>
     </footer>
-    <!-- Modal -->
-    <div class="modal" id="productModal">
-      <div class="modal__overlay"></div>
-      <div class="modal__content">
-        <img id="modalImage" src="" alt="Product" class="modal__image" />
-        <div class="modal__info">
-          <h2 id="modalTitle"></h2>
-          <p id="modalDesc"></p>
 
-          <div class="modal__sizes">
-            <h4>Size</h4>
-            <div class="modal__options" id="sizeOptions">
-              <button class="size-btn active" data-size="S">200 ml</button>
-              <button class="size-btn" data-size="M">300 ml</button>
-              <button class="size-btn" data-size="L">400 ml</button>
-            </div>
-          </div>
-
-          <div class="modal__additives">
-            <h4>Additives</h4>
-            <div class="modal__options" id="additiveOptions">
-              <button class="add-btn" data-add="Sugar">Sugar</button>
-              <button class="add-btn" data-add="Cinnamon">Cinnamon</button>
-              <button class="add-btn" data-add="Syrup">Syrup</button>
-            </div>
-          </div>
-
-          <div class="modal__total">
-            <span>Total:</span>
-            <strong id="modalPrice">$0.00</strong>
-          </div>
-
-          <button id="closeModal" class="modal__close">Close</button>
-        </div>
-      </div>
-    </div>
     <script src="js/menu.js"></script>
     <script src="./js/hamburger-menu.js"></script>
   </body>

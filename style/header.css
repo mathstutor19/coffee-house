@@ -182,7 +182,7 @@
     right: 0;
   }
 }
-
+/* 
 /* --- HOVER EFFEKTLAR FAQAT DESKTOPDA --- */
 @media (hover: hover) and (pointer: fine) {
   .nav__link:hover {
@@ -216,4 +216,8 @@
   .nav__mobile__link:hover {
     all: unset;
   }
+}
+
+.header {
+  margin-top: 17px;
 }

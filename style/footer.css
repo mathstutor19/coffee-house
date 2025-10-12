@@ -123,6 +123,7 @@ li {
   background: #e1d4c9;
   top: 25px;
 }
+
 #footer {
   scroll-behavior: smooth;
 }
@@ -212,4 +213,7 @@ li {
   .footer__address__link:hover:before {
     all: unset;
   }
+}
+.menu__footer {
+  margin-top: 100px;
 }

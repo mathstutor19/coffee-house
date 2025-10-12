@@ -1,79 +1,75 @@
-const menuItems = document.querySelectorAll(".offer__menu");
 const wrapper = document.querySelector(".offer___card__wrapper");
-let allProducts = [];
+const menuButtons = document.querySelectorAll(".offer__menu");
+const loadMoreBtn = document.querySelector(".load-more");
 
-// 🔹 1. Ma'lumotlarni yuklaymiz
-fetch("./js/products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    allProducts = data; // Saqlab qo‘yamiz
-    renderProducts(allProducts.filter((p) => p.category === "coffee")); // Default: coffee
-  })
-  .catch((err) => console.error("JSON yuklashda xatolik:", err));
+let products = [];
+let activeCategory = "coffee";
+let visibleCount = 8;
 
-// 🔹 2. Render funksiyasi
-function renderProducts(products) {
-  console.log(products);
-  wrapper.innerHTML = ""; // Eski kartalarni tozalaymiz
-
-  products.forEach((item, index) => {
-    const card = document.createElement("article");
-    card.className = "offer__card";
-
-    card.innerHTML = `
-      <img 
-        class="offer__card__image" 
-        src="././images/${item.category}-${index + 1}.png"" 
-        alt="${item.name}"
-      />
-      <div class="offer__card__about">
-        <h3 class="offer__card__title">${item.name}</h3>
-        <p class="offer__card__text">${item.description}</p>
-        <strong class="offer__card__price">$${item.price}</strong>
-      </div>
-    `;
-
-    wrapper.appendChild(card);
-  });
+// JSON faylni yuklash
+async function loadProducts() {
+  const res = await fetch("./js/products.json");
+  products = await res.json();
+  updateLayout();
 }
 
-// 🔹 3. Menyuga click hodisasi
-menuItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // Aktiv holatlarni olib tashlash
-    document
-      .querySelector(".offer__menu-active")
-      ?.classList.remove("offer__menu-active");
-    document
-      .querySelector(".offer__menu__image-active")
-      ?.classList.remove("offer__menu__image-active");
-    document
-      .querySelector(".offer__menu__text-active")
-      ?.classList.remove("offer__menu__text-active");
+// Kategoriya bo‘yicha mahsulotlarni chiqarish
+function renderProducts(category) {
+  wrapper.innerHTML = "";
+  const filtered = products.filter((p) => p.category === category);
+  const width = window.innerWidth;
+  const count = width <= 768 ? 4 : 8;
 
-    // Bosilgan elementni aktiv qilish
-    item.classList.add("offer__menu-active");
-    item
-      .querySelector(".offer__menu__image")
-      .classList.add("offer__menu__image-active");
-    item.querySelector("span").classList.add("offer__menu__text-active");
+  filtered.slice(0, count).forEach((item, id) => createProductCard(item, id));
 
-    // 🔹 Toifani aniqlaymiz (Coffee, Tea, Dessert)
-    const category = item
-      .querySelector("span")
-      .textContent.toLowerCase()
-      .trim();
+  // Load More ko‘rsatish
+  if (width <= 768 && filtered.length > 4) {
+    loadMoreBtn.style.display = "block";
+  } else {
+    loadMoreBtn.style.display = "none";
+  }
+}
 
-    // 🔹 filter orqali faqat shu toifani chiqaramiz
-    const filtered = allProducts.filter((p) => p.category === category);
-    renderProducts(filtered);
+// Har bir mahsulot kartasini yaratish
+function createProductCard(item, id) {
+  const card = document.createElement("article");
+  card.className = "offer__card";
+  card.innerHTML = `
+    <img class="offer__card__image" src="./images/${item.category}-${
+    id + 1
+  }.png" alt="${item.name}" />
+    <div class="offer__card__about">
+      <h3 class="offer__card__title">${item.name}</h3>
+      <p class="offer__card__text">${item.description}</p>
+      <strong class="offer__card__price">$${item.price}</strong>
+    </div>
+  `;
+  wrapper.appendChild(card);
+}
+
+// Kategoriya tugmasini bosganda
+menuButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    menuButtons.forEach((b) => b.classList.remove("offer__menu-active"));
+    btn.classList.add("offer__menu-active");
+    activeCategory = btn.dataset.category;
+    renderProducts(activeCategory);
   });
 });
 
-// Modal screen
-const modal = document.getElementById("productModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalPrice = document.getElementById("modalPrice");
-const closeModal = document.getElementById("closeModal");
+// Load More bosilganda
+loadMoreBtn.addEventListener("click", () => {
+  const filtered = products.filter((p) => p.category === activeCategory);
+  filtered.slice(4).forEach((item, id) => createProductCard(item, id));
+  loadMoreBtn.style.display = "none";
+});
+
+// Ekran o‘lchami o‘zgarsa
+window.addEventListener("resize", updateLayout);
+
+function updateLayout() {
+  renderProducts(activeCategory);
+}
+
+// Sahifa yuklanganda
+window.addEventListener("DOMContentLoaded", loadProducts);

@@ -13,6 +13,7 @@ body {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  padding-top: 17px;
 }
 
 a {
@@ -147,10 +148,9 @@ li {
 
 .offer___card__wrapper {
   display: flex;
-  justify-content: space-between;
-  row-gap: 40px;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  gap: 40px;
 }
 
 .offer__card {
@@ -219,6 +219,28 @@ li {
 
 .menu__loader {
   display: none;
+}
+
+.load-more {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 100px;
+  border: 1px solid #665f55;
+  margin: 40px auto 0px;
+  transition: all 0.4s ease-in-out;
+}
+.load-more:hover {
+  background: #665f55;
+}
+.load-more:hover .load-more__img {
+  filter: brightness(0) invert(1);
+}
+.load-more__img {
+  padding: 17px;
 }
 
 /* Modal start  */
@@ -297,6 +319,9 @@ li {
 }
 
 /* Responsive start  */
+@media (max-width: 992px) {
+}
+
 @media (max-width: 768px) {
 }
 

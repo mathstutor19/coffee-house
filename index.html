@@ -87,12 +87,19 @@
           </a>
         </div>
       </section>
+
       <section class="favorite">
         <h2 class="favorite__title">
           Choose your <span>favorite</span> coffee
         </h2>
         <div class="favorite__sliders">
           <div class="favorite__slide">
+            <div id="loader" class="loader favorite__error--hidden">
+              <p class="loader__inner"></p>
+            </div>
+            <div id="error" class="favorite__error--hidden">
+              Something went wrong. Please, refresh the page
+            </div>
             <div class="favorite__slide__center">
               <img
                 class="favorite__slide__image"
@@ -255,7 +262,9 @@
         </div>
       </div>
     </footer>
-    <script src="./js/hamburger-menu.js"></script>
-    <script src="./js/slider.js"></script>
+    <!-- <script type="module" src="./js/hamburger-menu.js"></script>
+    <script type="module" src="./js/slider.js"></script> -->
+    <script type="module" src="./ts/main.ts"></script>
+    <script type="module" src="./ts/favourite.ts"></script>
   </body>
 </html>

@@ -31,6 +31,13 @@
           </li>
         </ul>
         <div class="nav__menu nav__menu-active">
+          <!-- Cart icon -->
+          <a id="cartLink" class="cart-icon hidden" href="/cart.html">
+            <span class="cart-icon-emoji"
+              ><img src="./images/icons/shopping-bag.svg" alt="bag"
+            /></span>
+            <span id="cartCount" class="cart-count">0</span>
+          </a>
           <a href="menu.html" class="nav__menu__link">
             <span>Menu</span>
             <img src="./images/icons/coffee-cup.svg" alt="coffee-cup" />
@@ -153,6 +160,11 @@
           </div>
 
           <div class="modal-section">
+            <img
+              class="modal__close-button"
+              src="images/icons/button-close.svg"
+              alt="close"
+            />
             <h3 class="model-size-title">Additives</h3>
             <div class="model-size-wrapper">
               <label class="model-size-label"
@@ -186,7 +198,7 @@
             price and place your order. Earn loyalty points and enjoy your
             favorite coffee with up to 20% discount.
           </p>
-          <button id="closeModal" class="close">Close</button>
+          <button id="closeModal" class="close">Add to cart</button>
         </div>
       </div>
     </div>

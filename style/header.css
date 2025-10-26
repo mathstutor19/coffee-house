@@ -67,7 +67,16 @@
 .small__menu {
   display: none;
 }
-
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.cart-icon.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 /* --- Burger Menu Panel --- */
 .mobile__menu {
   position: fixed;

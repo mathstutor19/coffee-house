@@ -67,157 +67,12 @@
       </nav>
     </header>
     <main class="container">
-      <!-- <section class="offer">
-        <h1 class="offer__title">
-          Behind each of our cups hides an <span>amazing surprise</span>
-        </h1>
-        <ul class="offer__menus">
-          <li class="offer__menu offer__menu-active">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image offer__menu__image-active">
-                <img src="./images/icons/coffee.svg" alt="coffee" />
-              </div>
-              <span class="offer__menu__text-active">Coffee</span>
-            </div>
-          </li>
-          <li class="offer__menu">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image">
-                <img src="./images/icons/tea.svg" alt="tea" />
-              </div>
-              <span class="offer__menu__text">Tea</span>
-            </div>
-          </li>
-          <li class="offer__menu">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image">
-                <img src="./images/icons/dessert.svg" alt="dessert" />
-              </div>
-              <span class="offer__menu__text">Dessert</span>
-            </div>
-          </li>
-        </ul>
-        <div class="offer___card__wrapper">
-          <article class="offer__card">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-1.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Irish coffee</h3>
-              <p class="offer__card__text">
-                Fragrant black coffee with Jameson Irish whiskey and whipped
-                milk
-              </p>
-              <strong class="offer__card__price">$7.00</strong>
-            </div>
-          </article>
-          <article class="offer__card">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-2.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Kahlua coffee</h3>
-              <p class="offer__card__text">
-                Classic coffee with milk and Kahlua liqueur under a cap of
-                frothed milk
-              </p>
-              <strong class="offer__card__price">$7.00</strong>
-            </div>
-          </article>
-          <article class="offer__card">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-3.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Honey raf</h3>
-              <p class="offer__card__text">
-                Espresso with frothed milk, cream and aromatic honey
-              </p>
-              <strong class="offer__card__price">$5.50</strong>
-            </div>
-          </article>
-          <article class="offer__card">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-4.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Ice cappuccino</h3>
-              <p class="offer__card__text">
-                Cappuccino with soft thick foam in summer version with ice
-              </p>
-              <strong class="offer__card__price">$5.00</strong>
-            </div>
-          </article>
-          <article class="offer__card offer__card-hidden">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-5.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Espresso</h3>
-              <p class="offer__card__text">Classic black coffee</p>
-              <strong class="offer__card__price">$4.50</strong>
-            </div>
-          </article>
-          <article class="offer__card offer__card-hidden">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-6.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Latte</h3>
-              <p class="offer__card__text">
-                Espresso coffee with the addition of steamed milk and dense milk
-                foam
-              </p>
-              <strong class="offer__card__price">$5.50</strong>
-            </div>
-          </article>
-          <article class="offer__card offer__card-hidden">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-7.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Latte macchiato</h3>
-              <p class="offer__card__text">
-                Espresso with frothed milk and chocolate
-              </p>
-              <strong class="offer__card__price">$5.50</strong>
-            </div>
-          </article>
-          <article class="offer__card offer__card-hidden">
-            <img
-              class="offer__card__image"
-              src="./images/coffee-8.png"
-              alt="coffee-1"
-            />
-            <div class="offer__card__about">
-              <h3 class="offer__card__title">Coffee with cognac</h3>
-              <p class="offer__card__text">
-                Fragrant black coffee with cognac and whipped cream
-              </p>
-              <strong class="offer__card__price">$6.50</strong>
-            </div>
-          </article>
-        </div>
-        <img
-          class="menu__loader"
-          src="./images/icons/menu-loader.svg"
-          alt="menu-loader"
-        />
-      </section> -->
+      <div id="loader" class="loader menu__error--hidden">
+        <p class="loader__inner"></p>
+      </div>
+      <div id="error" class="menu__error--hidden">
+        Something went wrong. Please, refresh the page
+      </div>
       <section class="offer">
         <h1 class="offer__title">
           Behind each of our cups hides an <span>amazing surprise</span>
@@ -399,5 +254,6 @@
     <!-- <script type="module" src="js/menu.js"></script>
     <script type="module" src="./js/hamburger-menu.js"></script> -->
     <script type="module" src="./ts/main.ts"></script>
+    <script type="module" src="./ts/menu.ts"></script>
   </body>
 </html>

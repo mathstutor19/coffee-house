@@ -1,20 +1,75 @@
-const wrapper = document.querySelector(".offer___card__wrapper");
-const menuButtons = document.querySelectorAll(".offer__menu");
-const loadMoreBtn = document.querySelector(".load-more");
-
-let products = [];
-let activeCategory = "coffee";
-let visibleCount = 8;
-
-// JSON faylni yuklash
-async function loadProducts() {
-  const res = await fetch("./js/products.json");
-  products = await res.json();
-  updateLayout();
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  category: string;
+  discountPrice: string;
 }
 
+const wrapper = document.querySelector(".offer___card__wrapper") as HTMLElement;
+const menuButtons = document.querySelectorAll(
+  ".offer__menu"
+) as NodeListOf<HTMLButtonElement>;
+const loadMoreBtn = document.querySelector(".load-more") as HTMLButtonElement;
+
+const loaderMenu = document.getElementById("loader") as HTMLElement;
+const errorBoxMenu = document.getElementById("error") as HTMLElement;
+const menuContainer = document.querySelector<HTMLDivElement>(".offer")!;
+// Modal elementlari
+const modal = document.getElementById("productModal") as HTMLElement;
+const modalTitle = document.getElementById("modalTitle") as HTMLElement;
+const modalDesc = document.getElementById("modalDesc") as HTMLElement;
+const modalImg = document.getElementById("modalImg") as HTMLImageElement;
+const finalPrice = document.getElementById("finalPrice") as HTMLElement;
+const sizeRadios = document.querySelectorAll(
+  'input[name="size"]'
+) as NodeListOf<HTMLInputElement>;
+const additiveCheckboxes = document.querySelectorAll(
+  ".additive"
+) as NodeListOf<HTMLInputElement>;
+const closeModal = document.getElementById("closeModal") as HTMLElement;
+
+let products: Product[] = [];
+let activeCategory: string = "coffee";
+let visibleCount: number = 8;
+
+async function loadProducts(): Promise<void> {
+  try {
+    loaderMenu.classList.remove("menu__error--hidden");
+    errorBoxMenu.classList.add("menu__error--hidden");
+    menuContainer.classList.add("menu__error--hidden");
+
+    const res = await fetch(
+      "http://coffee-shop-be.eu-central-1.elasticbeanstalk.com/products"
+    );
+    if (!res.ok) throw new Error("Network error");
+
+    const json = await res.json();
+    products = Array.isArray(json) ? json : json.data ?? [];
+    console.log(products);
+    // slides = result.data; // ✅ Faqat data massivini olamiz
+    updateLayout();
+    loaderMenu.classList.add("menu__error--hidden");
+    menuContainer.classList.remove("menu__error--hidden");
+  } catch (err) {
+    console.error("❌ Error:", err);
+    loaderMenu.classList.add("menu__error--hidden");
+    errorBoxMenu.textContent =
+      "Something went wrong. Please, refresh the page.";
+    errorBoxMenu.classList.remove("menu__error--hidden");
+  }
+}
+
+// JSON faylni yuklash
+// async function loadProducts(): Promise<void> {
+//   const res = await fetch("./js/products.json");
+//   products = await res.json();
+//   updateLayout();
+// }
+
 // Kategoriya bo‘yicha mahsulotlarni chiqarish
-function renderProducts(category) {
+function renderProducts(category: string): void {
   wrapper.innerHTML = "";
   const filtered = products.filter((p) => p.category === category);
   const width = window.innerWidth;
@@ -35,7 +90,7 @@ menuButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     menuButtons.forEach((b) => b.classList.remove("offer__menu-active"));
     btn.classList.add("offer__menu-active");
-    activeCategory = btn.dataset.category;
+    activeCategory = btn.dataset.category || "coffee";
     renderProducts(activeCategory);
   });
 });
@@ -50,32 +105,22 @@ loadMoreBtn.addEventListener("click", () => {
 // Ekran o‘lchami o‘zgarsa
 window.addEventListener("resize", updateLayout);
 
-function updateLayout() {
+function updateLayout(): void {
   renderProducts(activeCategory);
 }
 
 // Sahifa yuklanganda
 window.addEventListener("DOMContentLoaded", loadProducts);
 
-// Modal elementlari
-const modal = document.getElementById("productModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalImg = document.getElementById("modalImg");
-const finalPrice = document.getElementById("finalPrice");
-const sizeRadios = document.querySelectorAll('input[name="size"]');
-const additiveCheckboxes = document.querySelectorAll(".additive");
-const closeModal = document.getElementById("closeModal");
-
 // JSON faylni yuklash
-async function loadProducts() {
+async function loadProductsAgain(): Promise<void> {
   const res = await fetch("./js/products.json");
   products = await res.json();
   renderProducts(activeCategory);
 }
 
 // Dinamik card yaratish
-function createProductCard(item, id) {
+function createProductCard(item: Product, id: number): void {
   const card = document.createElement("article");
   card.className = "offer__card";
 
@@ -107,7 +152,10 @@ function createProductCard(item, id) {
     modalImg.src = `./images/${item.category}-${id + 1}.png`;
 
     // Reset selections
-    document.querySelector('input[name="size"][value="S"]').checked = true;
+    const sizeInput = document.querySelector(
+      'input[name="size"][value="S"]'
+    ) as HTMLInputElement;
+    if (sizeInput) sizeInput.checked = true;
     additiveCheckboxes.forEach((cb) => (cb.checked = false));
 
     updateModalPrice(item.price);
@@ -115,11 +163,12 @@ function createProductCard(item, id) {
 }
 
 // Narxni hisoblash funksiyasi
-function updateModalPrice(basePrice) {
-  function calculate() {
-    const sizePrice = parseFloat(
-      document.querySelector('input[name="size"]:checked').dataset.price
-    );
+function updateModalPrice(basePrice: string): void {
+  function calculate(): void {
+    const sizeInput = document.querySelector(
+      'input[name="size"]:checked'
+    ) as HTMLInputElement;
+    const sizePrice = parseFloat(sizeInput?.dataset.price || "0");
     let additivesPrice = 0;
     additiveCheckboxes.forEach((cb) => {
       if (cb.checked) additivesPrice += 0.5;
@@ -130,29 +179,29 @@ function updateModalPrice(basePrice) {
       additivesPrice
     ).toFixed(2);
   }
+
   sizeRadios.forEach((r) => r.addEventListener("change", calculate));
   additiveCheckboxes.forEach((cb) => cb.addEventListener("change", calculate));
   calculate();
 }
-
-
 
 // Menu tugmalari
 menuButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     menuButtons.forEach((b) => b.classList.remove("offer__menu-active"));
     btn.classList.add("offer__menu-active");
-    activeCategory = btn.dataset.category;
+    activeCategory = btn.dataset.category || "coffee";
     renderProducts(activeCategory);
   });
 });
 
 // Modal yopish
 closeModal.addEventListener("click", closeModalFunc);
-window.addEventListener("click", (e) => {
+window.addEventListener("click", (e: MouseEvent) => {
   if (e.target === modal) closeModalFunc();
 });
-function closeModalFunc() {
+
+function closeModalFunc(): void {
   modal.style.display = "none";
   document.body.style.overflow = "auto"; // scrollni tiklash
 }

@@ -73,9 +73,10 @@
   justify-content: center;
   gap: 20px;
 }
-.cart-icon.hidden {
-  opacity: 0;
-  pointer-events: none;
+
+/* Agar yashirin bo‘lishi kerak bo‘lsa */
+.hidden {
+  display: none;
 }
 /* --- Burger Menu Panel --- */
 .mobile__menu {

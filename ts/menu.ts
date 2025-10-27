@@ -6,6 +6,9 @@ interface Product {
   category: string;
   discountPrice: string;
 }
+interface CartItem extends Product {
+  quantity: number;
+}
 
 // --- HTML elementlar ---
 const wrapper = document.querySelector(".offer___card__wrapper") as HTMLElement;
@@ -177,6 +180,14 @@ function showModal(product: Product, imgSrc: string): void {
   modalImg.src = imgSrc;
 
   updateModalPrice(product.price);
+  // Eski eventlarni tozalash
+  closeModal.replaceWith(closeModal.cloneNode(true));
+  const newAddBtn = document.getElementById("closeModal") as HTMLElement;
+
+  newAddBtn.addEventListener("click", () => {
+    addToCartLocal(product);
+    closeModalFunc();
+  });
 }
 
 // --- Narx hisoblash ---
@@ -217,5 +228,34 @@ function closeModalFunc(): void {
 window.addEventListener("keydown", (e: KeyboardEvent) => {
   if (e.key === "Escape") closeModalFunc();
 });
+
+// --- LocalStorage'dagi savatchani olish ---
+function getCart(): CartItem[] {
+  return JSON.parse(localStorage.getItem("cart") || "[]");
+}
+
+// --- LocalStorage'ga saqlash ---
+function saveCart(cart: CartItem[]): void {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// --- Mahsulotni savatchaga qo‘shish ---
+function addToCartLocal(product: Product): void {
+  let cart = getCart();
+
+  const existingIndex = cart.findIndex((p) => p.id === product.id);
+
+  if (existingIndex !== -1) {
+    // Agar mahsulot allaqachon mavjud bo‘lsa — quantity ni oshiramiz
+    cart[existingIndex].quantity += 1;
+  } else {
+    // Yangi mahsulot sifatida qo‘shamiz
+    const newItem: CartItem = { ...product, quantity: 1 };
+    cart.push(newItem);
+  }
+
+  saveCart(cart);
+}
+
 // --- Sahifa yuklanganda ---
 window.addEventListener("DOMContentLoaded", loadProducts);

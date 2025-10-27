@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/icons/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="style/menu.css" />
+
+    <link rel="stylesheet" href="style/cart.css" />
     <link rel="stylesheet" href="./style/header.css" />
     <link rel="stylesheet" href="./style/footer.css" />
     <title>Coffee</title>
@@ -74,135 +75,52 @@
       </nav>
     </header>
     <main class="container">
-      <div id="loader" class="loader menu__error--hidden">
-        <p class="loader__inner"></p>
-      </div>
-      <div id="error" class="menu__error--hidden">
-        Something went wrong. Please, refresh the page
-      </div>
-      <section class="offer">
-        <h1 class="offer__title">
-          Behind each of our cups hides an <span>amazing surprise</span>
-        </h1>
+      <div class="cart-container">
+        <h1 class="cart-title">Cart</h1>
 
-        <ul class="offer__menus">
-          <li class="offer__menu offer__menu-active" data-category="coffee">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image offer__menu__image-active">
-                <img src="./images/icons/coffee.svg" alt="coffee" />
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="item-left">
+              <img
+                src="https://images.unsplash.com/photo-1605479443091-763b37d3ef19?auto=format&fit=crop&w=80&h=80"
+                alt="Marble cheesecake"
+                class="item-image"
+              />
+              <div class="item-info">
+                <h3 class="item-name">Marble cheesecake</h3>
+                <p class="item-desc">50g, Berries, Nuts</p>
               </div>
-              <span class="offer__menu__text-active">Coffee</span>
             </div>
-          </li>
-          <li class="offer__menu" data-category="tea">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image">
-                <img src="./images/icons/tea.svg" alt="tea" />
-              </div>
-              <span class="offer__menu__text">Tea</span>
-            </div>
-          </li>
-          <li class="offer__menu" data-category="dessert">
-            <div class="offer__menu__button">
-              <div class="offer__menu__image">
-                <img src="./images/icons/dessert.svg" alt="dessert" />
-              </div>
-              <span class="offer__menu__text">Dessert</span>
-            </div>
-          </li>
-        </ul>
+            <p class="item-price">$3.50</p>
+          </div>
 
-        <div class="offer___card__wrapper"></div>
-
-        <div class="load-more" style="display: none">
-          <img
-            class="load-more__img"
-            src="./images/icons/refresh.svg"
-            alt="refresh"
-          />
+          <div class="cart-item">
+            <div class="item-left">
+              <img
+                src="https://images.unsplash.com/photo-1613470205833-8b5e33f3f3b8?auto=format&fit=crop&w=80&h=80"
+                alt="Moroccan"
+                class="item-image"
+              />
+              <div class="item-info">
+                <h3 class="item-name">Moroccan</h3>
+                <p class="item-desc">200ml</p>
+              </div>
+            </div>
+            <p class="item-price">$4.50</p>
+          </div>
         </div>
-      </section>
+
+        <div class="cart-total">
+          <p>Total:</p>
+          <p id="total-price">$8.00</p>
+        </div>
+
+        <div class="cart-buttons">
+          <button class="btn">Sign In</button>
+          <button class="btn">Registration</button>
+        </div>
+      </div>
     </main>
-    <!-- Modal -->
-    <div id="productModal" class="modal">
-      <div class="modal-content">
-        <img id="modalImg" src="" alt="" class="modal-img" />
-        <div>
-          <h2 id="modalTitle" class="modalTitle"></h2>
-          <p id="modalDesc" class="modalDesc"></p>
-
-          <div class="modal-section">
-            <h3 class="model-size-title">Size:</h3>
-            <div class="model-size-wrapper">
-              <label class="model-size-label"
-                ><input
-                  type="radio"
-                  name="size"
-                  value="S"
-                  data-price="0"
-                  checked
-                />
-                <span>S</span> 200 ml</label
-              >
-              <label class="model-size-label"
-                ><input
-                  type="radio"
-                  name="size"
-                  value="M"
-                  data-price="0.5"
-                /><span>M</span> 300 ml</label
-              >
-              <label class="model-size-label"
-                ><input type="radio" name="size" value="L" data-price="1" />
-                <span>L</span> 400 ml</label
-              >
-            </div>
-          </div>
-
-          <div class="modal-section">
-            <img
-              class="modal__close-button"
-              src="images/icons/button-close.svg"
-              alt="close"
-            />
-            <h3 class="model-size-title">Additives</h3>
-            <div class="model-size-wrapper">
-              <label class="model-size-label"
-                ><input
-                  type="radio"
-                  name="size"
-                  value="S"
-                  data-price="0"
-                  checked
-                />
-                <span>1</span> Sugar</label
-              >
-              <label class="model-size-label"
-                ><input
-                  type="radio"
-                  name="size"
-                  value="M"
-                  data-price="0.5"
-                /><span>2</span> Cinnamon</label
-              >
-              <label class="model-size-label"
-                ><input type="radio" name="size" value="L" data-price="1" />
-                <span>3</span> Syrup</label
-              >
-            </div>
-          </div>
-
-          <p class="modal-total">Total Price: $<span id="finalPrice"></span></p>
-          <p class="modal-note">
-            The cost is not final. Download our mobile app to see the final
-            price and place your order. Earn loyalty points and enjoy your
-            favorite coffee with up to 20% discount.
-          </p>
-          <button id="closeModal" class="close">Add to cart</button>
-        </div>
-      </div>
-    </div>
-
     <footer id="footer" class="container">
       <div class="footer menu__footer">
         <div class="footer__left">
@@ -267,7 +185,5 @@
     <script type="module" src="./js/hamburger-menu.js"></script> -->
 
     <script type="module" src="./ts/cart.ts"></script>
-    <script type="module" src="./ts/main.ts"></script>
-    <script type="module" src="./ts/menu.ts"></script>
   </body>
 </html>
